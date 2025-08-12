@@ -20,11 +20,14 @@ services:
     container_name: redis_cache
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
     networks:
       - app_network
 
 volumes:
   postgres_data:
+  redis_data:
 
 networks:
   app_network:
